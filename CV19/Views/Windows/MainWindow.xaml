@@ -3,26 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cmd="clr-namespace:CV19.Infrastructure.Commands"
         xmlns:l="clr-namespace:CV19"
         xmlns:vm="clr-namespace:CV19.ViewModels"
         mc:Ignorable="d"
         Title="{Binding Path=Title}" Height="450" Width="800">
+   <!--Hot Keys-->
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Alt" Key="Q" Command="{Binding Path=CloseApplicationCommand}"/>
+    </Window.InputBindings>
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CloseAppComm"/>
+    </Window.Resources>
+    
 
     <DockPanel>
         <!--Main Menu-->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Exit" Command="{Binding Path=CloseApplicationCommand}"/>
+                <MenuItem Header="Exit to..." Command="{StaticResource CloseAppComm}"/>
+
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About us."/>
             </MenuItem>
 
         </Menu>
-        
+
         <!--MainWindow StatusBar-->
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -32,7 +43,7 @@
                 <ProgressBar Width="120" Height="14" Value="30"/>
             </StatusBarItem>
         </StatusBar>
-        
+
         <!--MainWindow TabControl-->
         <TabControl>
             <TabItem Header="Tab 1">
@@ -50,7 +61,13 @@
                                Margin="5 7"
                                Fill="Blue" Stroke="Red" StrokeThickness="3" RadiusX="5" RadiusY="7"/>
                     <Ellipse Grid.Row="0" Grid.Column="1"
-                             Fill="Red" Stroke="Blue" StrokeThickness="3" />
+                             Fill="Red" Stroke="Blue" StrokeThickness="3"
+                             >
+                        <Ellipse.InputBindings>
+                            <MouseBinding Command="{Binding Path=CloseApplicationCommand}"
+                                          MouseAction="LeftDoubleClick"/>
+                        </Ellipse.InputBindings>
+                    </Ellipse>
                     <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
                                   HorizontalAlignment="Right"
                                   Width="4" Background="Gainsboro"/>
