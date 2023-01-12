@@ -10,9 +10,54 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
-        <TextBox Height="Auto" Width="300" Margin="36 30"
-                 TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"
-                 Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}"/>
-    </Grid>
+
+    <DockPanel>
+        <!--Main Menu-->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About us."/>
+            </MenuItem>
+
+        </Menu>
+        
+        <!--MainWindow StatusBar-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding Path=Status}"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <ProgressBar Width="120" Height="14" Value="30"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+        <!--MainWindow TabControl-->
+        <TabControl>
+            <TabItem Header="Tab 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="165*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="157"/>
+                        <ColumnDefinition Width="637*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Grid.Row="0" Grid.Column="0"
+                               Margin="5 7"
+                               Fill="Blue" Stroke="Red" StrokeThickness="3" RadiusX="5" RadiusY="7"/>
+                    <Ellipse Grid.Row="0" Grid.Column="1"
+                             Fill="Red" Stroke="Blue" StrokeThickness="3" />
+                    <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                  HorizontalAlignment="Right"
+                                  Width="4" Background="Gainsboro"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 2"></TabItem>
+            <TabItem Header="Tab 3"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
