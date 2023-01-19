@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CV19CMD", "CV19CMD\CV19CMD.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CV19TESTS", "CV19TESTS\CV19TESTS.csproj", "{88AA8216-2F14-46A4-849D-C817BABDFE43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CV19CMD3.1", "CV19CMD3.1\CV19CMD3.1.csproj", "{9E777974-A7C9-442D-804F-B045BDB11F89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{88AA8216-2F14-46A4-849D-C817BABDFE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AA8216-2F14-46A4-849D-C817BABDFE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AA8216-2F14-46A4-849D-C817BABDFE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E777974-A7C9-442D-804F-B045BDB11F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E777974-A7C9-442D-804F-B045BDB11F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E777974-A7C9-442D-804F-B045BDB11F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E777974-A7C9-442D-804F-B045BDB11F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

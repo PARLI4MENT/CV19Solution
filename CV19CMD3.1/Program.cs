@@ -3,6 +3,10 @@ using System;
 using System.Net;
 using System.Linq;
 using System.Globalization;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace std
 {
@@ -80,14 +84,14 @@ namespace std
             //    Console.WriteLine(data_line);
             //}
 
-            var dates = GetDates();
-            Console.WriteLine(string.Join("\r\n", dates));
+            //var dates = GetDates();
+            //Console.WriteLine(string.Join("\r\n", dates));
             #endregion
 
-            //var russia_data = GetData()
-            //   .First(v => v.Contry.Equals("Russia", StringComparison.OrdinalIgnoreCase));
+            var russia_data = GetData()
+               .First(v => v.Contry.Equals("Russia", StringComparison.OrdinalIgnoreCase));
 
-            //Console.WriteLine(string.Join("\r\n", GetDates().Zip(russia_data.Counts, (date, count) => $"{date:dd:MM} - {count}")));
+            Console.WriteLine(string.Join("\r\n", GetDates().Zip(russia_data.Counts, (date, count) => $"{date:dd:MM} - {count}")));
 
             Console.WriteLine("\nDONE!");
             Console.ReadKey();
